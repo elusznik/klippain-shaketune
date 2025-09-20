@@ -95,7 +95,7 @@ Here's how to troubleshoot the issue:
      - Ensure your belts are properly routed.
      - Check for correct alignment of the belts on all bearing flanges during movement (check them during a print).
      - Belt dust is often a sign of misalignment or wear.
-  1. **Toolhead behavior on CoreXY/Hybrid CoreXY printers**: With motors off and the toolhead centered, gently push the Y-axis front-to-back. The toolhead shouldn't move left or right. If it does, one of the belts might be obstructed and requires inspection to find out the problem.
+  1. **Toolhead behavior on CoreXY/Hybrid CoreXY (including limited variants) printers**: With motors off and the toolhead centered, gently push the Y-axis front-to-back. The toolhead shouldn't move left or right. If it does, one of the belts might be obstructed and requires inspection to find out the problem.
   1. **Gantry Squareness**:
      - Ensure your gantry is perfectly parallel and square. You can refer to [Nero3D's de-racking video](https://youtu.be/cOn6u9kXvy0?si=ZCSdWU6br3Y9rGsy) for guidance.
      - After removing the belts, test the toolhead's movement by hand across all positions. Movement should be smooth with no hard points or areas of resistance.

@@ -54,7 +54,12 @@ def compare_belts_responses(gcmd, klipper_config, st_process: ShakeTuneProcess) 
     max_accel = max_freq * accel_per_hz
 
     motors_config_parser = MotorsConfigParser(klipper_config, motors=None)
-    if motors_config_parser.kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'}:
+    if motors_config_parser.kinematics in {
+        'corexy',
+        'limited_corexy',
+        'hybrid_corexy',
+        'limited_hybrid_corexy',
+    }:
         filtered_config = [a for a in AXIS_CONFIG if a['axis'] in ('a', 'b')]
         if accel_chip is None:
             accel_chip = Accelerometer.find_axis_accelerometer(printer, 'xy')

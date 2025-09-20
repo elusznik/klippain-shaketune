@@ -44,7 +44,7 @@ python -m shaketune.cli input_shaper --help
 |---------|-------------|
 | `static_freq` | Static frequency analysis |
 | `axes_map` | Accelerometer axes mapping detection |
-| `belts` | Belt tension comparison (CoreXY/Hybrid CoreXY/CoreXZ) |
+| `belts` | Belt tension comparison (CoreXY/Hybrid CoreXY (incl. limited)/CoreXZ) |
 | `input_shaper` | Input shaper calibration |
 | `vibrations` | Machine vibrations profile |
 
@@ -103,7 +103,7 @@ python -m shaketune.cli static_freq \
 - `--duration`: Duration of the measurement (seconds)
 - `--accel_per_hz`: Acceleration per Hz used (mm/s²/Hz)
 
-### 3. Belt Comparison (CoreXY/Hybrid CoreXY/CoreXZ)
+### 3. Belt Comparison (CoreXY/Hybrid CoreXY (incl. limited)/CoreXZ)
 
 ```bash
 python -m shaketune.cli belts \
@@ -119,7 +119,7 @@ python -m shaketune.cli belts \
 ```
 
 **Required parameters:**
-- `--kinematics`: Machine kinematics (`corexy`, `hybrid_corexy`, `corexz`, `cartesian`, etc.)
+- `--kinematics`: Machine kinematics (`corexy`, `limited_corexy`, `hybrid_corexy`, `limited_hybrid_corexy`, `corexz`, `cartesian`, etc.)
 - `-k, --klipper_dir`: Path to Klipper directory (for shaper calculations)
 
 **Optional parameters:** (these are only used for the legend and the title of the graph)
@@ -168,6 +168,6 @@ python -m shaketune.cli vibrations \
 ```
 
 **Required parameters:**
-- `--kinematics`: Machine kinematics (`cartesian`, `corexy`, `hybrid_corexy`, `corexz`, etc.)
+- `--kinematics`: Machine kinematics (`cartesian`, `corexy`, `limited_corexy`, `hybrid_corexy`, `limited_hybrid_corexy`, `corexz`, etc.)
 - `--accel`: Acceleration used during measurements (mm/s²)
 - `-k, --klipper_dir`: Path to Klipper directory

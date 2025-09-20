@@ -52,7 +52,12 @@ def create_vibrations_profile(gcmd, config, st_process: ShakeTuneProcess) -> Non
     motors_config_parser = MotorsConfigParser(config, motors=['stepper_x', 'stepper_y'])
     if motors_config_parser.kinematics in {'cartesian', 'limited_cartesian', 'corexz', 'limited_corexz'}:
         main_angles = [0, 90]  # Cartesian motors are on X and Y axis directly, same for CoreXZ
-    elif motors_config_parser.kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'}:
+    elif motors_config_parser.kinematics in {
+        'corexy',
+        'limited_corexy',
+        'hybrid_corexy',
+        'limited_hybrid_corexy',
+    }:
         main_angles = [45, 135]  # CoreXY/Hybrid CoreXY motors are on A and B axis (45 and 135 degrees)
     else:
         raise gcmd.error(

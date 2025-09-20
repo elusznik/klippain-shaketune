@@ -327,12 +327,18 @@ class VibrationsPlotter(PlotterStrategy):
             0: ('X (0 deg)', 'purple', 10),
             90: ('Y (90 deg)', 'dark_purple', 5),
             45: (
-                'A (45 deg)' if kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'} else '45 deg',
+                'A (45 deg)'
+                if kinematics
+                in {'corexy', 'limited_corexy', 'hybrid_corexy', 'limited_hybrid_corexy'}
+                else '45 deg',
                 'orange',
                 10,
             ),
             135: (
-                'B (135 deg)' if kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'} else '135 deg',
+                'B (135 deg)'
+                if kinematics
+                in {'corexy', 'limited_corexy', 'hybrid_corexy', 'limited_hybrid_corexy'}
+                else '135 deg',
                 'dark_orange',
                 5,
             ),
@@ -410,12 +416,18 @@ class VibrationsPlotter(PlotterStrategy):
             0: ('X (0 deg)', 'purple', 10),
             90: ('Y (90 deg)', 'dark_purple', 5),
             45: (
-                'A (45 deg)' if kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'} else '45 deg',
+                'A (45 deg)'
+                if kinematics
+                in {'corexy', 'limited_corexy', 'hybrid_corexy', 'limited_hybrid_corexy'}
+                else '45 deg',
                 'orange',
                 10,
             ),
             135: (
-                'B (135 deg)' if kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'} else '135 deg',
+                'B (135 deg)'
+                if kinematics
+                in {'corexy', 'limited_corexy', 'hybrid_corexy', 'limited_hybrid_corexy'}
+                else '135 deg',
                 'dark_orange',
                 5,
             ),

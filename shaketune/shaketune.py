@@ -43,7 +43,7 @@ ST_COMMANDS = {
     ),
     'COMPARE_BELTS_RESPONSES': (
         'Perform a custom half-axis test to analyze and compare the '
-        'frequency profiles of individual belts on CoreXY/Hybrid CoreXY or CoreXZ printers'
+        'frequency profiles of individual belts on CoreXY/Hybrid CoreXY (including limited variants) or CoreXZ printers'
     ),
     'AXES_SHAPER_CALIBRATION': 'Perform standard axis input shaper tests on one or both XY axes to select the best input shaper filter',
     'CREATE_VIBRATIONS_PROFILE': (

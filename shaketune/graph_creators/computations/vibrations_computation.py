@@ -52,7 +52,12 @@ class VibrationsComputation:
         """Perform vibrations analysis computation"""
         if self.kinematics in {'cartesian', 'limited_cartesian', 'corexz', 'limited_corexz'}:
             main_angles = [0, 90]
-        elif self.kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'}:
+        elif self.kinematics in {
+            'corexy',
+            'limited_corexy',
+            'hybrid_corexy',
+            'limited_hybrid_corexy',
+        }:
             main_angles = [45, 135]
         else:
             raise ValueError(
@@ -158,6 +163,7 @@ class VibrationsComputation:
                 'corexy',
                 'limited_corexy',
                 'hybrid_corexy',
+                'limited_hybrid_corexy',
             }:
                 ConsoleOutput.print(f'Warning: motors have different TMC configurations!\n{motors_config_differences}')
         else:
@@ -302,7 +308,12 @@ class VibrationsComputation:
                 if kinematics in {'cartesian', 'limited_cartesian', 'corexz', 'limited_corexz'}:
                     speed_1 = np.abs(target_speed * cos_val)
                     speed_2 = np.abs(target_speed * sin_val)
-                elif kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'}:
+                elif kinematics in {
+                    'corexy',
+                    'limited_corexy',
+                    'hybrid_corexy',
+                    'limited_hybrid_corexy',
+                }:
                     speed_1 = np.abs(target_speed * (cos_val + sin_val) * sqrt_2_inv)
                     speed_2 = np.abs(target_speed * (cos_val - sin_val) * sqrt_2_inv)
 

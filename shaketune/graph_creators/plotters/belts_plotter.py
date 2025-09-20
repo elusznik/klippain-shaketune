@@ -90,7 +90,14 @@ class BeltsPlotter(PlotterStrategy):
             },
         ]
 
-        if data['kinematics'] in {'limited_corexy', 'corexy', 'hybrid_corexy', 'limited_corexz', 'corexz'}:
+        if data['kinematics'] in {
+            'limited_corexy',
+            'corexy',
+            'hybrid_corexy',
+            'limited_hybrid_corexy',
+            'limited_corexz',
+            'corexz',
+        }:
             title_lines.extend(
                 [
                     {

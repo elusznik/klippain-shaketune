@@ -1,6 +1,6 @@
 # Measuring belts relative differences
 
-The `COMPARE_BELTS_RESPONSES` macro is dedicated for CoreXY, Hybrid CoreXY or CoreXZ machines where it can help you to diagnose belt path problems by measuring and plotting the differences between their behaviors. It will also help you tension your belts at the same tension.
+The `COMPARE_BELTS_RESPONSES` macro is dedicated for CoreXY, Hybrid CoreXY (including limited variants) or CoreXZ machines where it can help you to diagnose belt path problems by measuring and plotting the differences between their behaviors. It will also help you tension your belts at the same tension.
 
   > **Note**:
   >
