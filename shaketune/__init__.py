@@ -7,7 +7,7 @@
 # Description: Functions as a plugin within Klipper to enhance printer diagnostics by:
 #              1. Diagnosing and pinpointing vibration sources in the printer.
 #              2. Conducting standard axis input shaper tests on the machine axes.
-#              3. Executing a specialized half-axis test for CoreXY/CoreXZ printers to analyze
+#              3. Executing a specialized half-axis test for CoreXY/Hybrid CoreXY/CoreXZ printers to analyze
 #                 and compare the frequency profiles of individual belts.
 #              4. ...
 

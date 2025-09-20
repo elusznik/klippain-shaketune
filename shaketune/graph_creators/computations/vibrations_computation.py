@@ -52,10 +52,12 @@ class VibrationsComputation:
         """Perform vibrations analysis computation"""
         if self.kinematics in {'cartesian', 'limited_cartesian', 'corexz', 'limited_corexz'}:
             main_angles = [0, 90]
-        elif self.kinematics in {'corexy', 'limited_corexy'}:
+        elif self.kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'}:
             main_angles = [45, 135]
         else:
-            raise ValueError('Only Cartesian, CoreXY and CoreXZ kinematics are supported by this tool at the moment!')
+            raise ValueError(
+                'Only Cartesian, CoreXY (including Hybrid CoreXY) and CoreXZ kinematics are supported by this tool at the moment!'
+            )
 
         psds = {}
         psds_sum = {}
@@ -152,7 +154,11 @@ class VibrationsComputation:
         # Motors infos and config differences check
         if self.motors is not None and len(self.motors) == 2:
             motors_config_differences = self.motors[0].compare_to(self.motors[1])
-            if motors_config_differences is not None and self.kinematics in {'corexy', 'limited_corexy'}:
+            if motors_config_differences is not None and self.kinematics in {
+                'corexy',
+                'limited_corexy',
+                'hybrid_corexy',
+            }:
                 ConsoleOutput.print(f'Warning: motors have different TMC configurations!\n{motors_config_differences}')
         else:
             motors_config_differences = None
@@ -296,7 +302,7 @@ class VibrationsComputation:
                 if kinematics in {'cartesian', 'limited_cartesian', 'corexz', 'limited_corexz'}:
                     speed_1 = np.abs(target_speed * cos_val)
                     speed_2 = np.abs(target_speed * sin_val)
-                elif kinematics in {'corexy', 'limited_corexy'}:
+                elif kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'}:
                     speed_1 = np.abs(target_speed * (cos_val + sin_val) * sqrt_2_inv)
                     speed_2 = np.abs(target_speed * (cos_val - sin_val) * sqrt_2_inv)
 

@@ -326,8 +326,16 @@ class VibrationsPlotter(PlotterStrategy):
         angle_settings = {
             0: ('X (0 deg)', 'purple', 10),
             90: ('Y (90 deg)', 'dark_purple', 5),
-            45: ('A (45 deg)' if kinematics in {'corexy', 'limited_corexy'} else '45 deg', 'orange', 10),
-            135: ('B (135 deg)' if kinematics in {'corexy', 'limited_corexy'} else '135 deg', 'dark_orange', 5),
+            45: (
+                'A (45 deg)' if kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'} else '45 deg',
+                'orange',
+                10,
+            ),
+            135: (
+                'B (135 deg)' if kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'} else '135 deg',
+                'dark_orange',
+                5,
+            ),
         }
 
         for angle, (label, color, zorder) in angle_settings.items():
@@ -401,8 +409,16 @@ class VibrationsPlotter(PlotterStrategy):
         angle_settings = {
             0: ('X (0 deg)', 'purple', 10),
             90: ('Y (90 deg)', 'dark_purple', 5),
-            45: ('A (45 deg)' if kinematics in {'corexy', 'limited_corexy'} else '45 deg', 'orange', 10),
-            135: ('B (135 deg)' if kinematics in {'corexy', 'limited_corexy'} else '135 deg', 'dark_orange', 5),
+            45: (
+                'A (45 deg)' if kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'} else '45 deg',
+                'orange',
+                10,
+            ),
+            135: (
+                'B (135 deg)' if kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'} else '135 deg',
+                'dark_orange',
+                5,
+            ),
         }
 
         ax.plot(

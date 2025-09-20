@@ -4,7 +4,7 @@
 # Licensed under the GNU General Public License v3.0 (GPL-3.0)
 #
 # File: compare_belts_responses.py
-# Description: Provides a command for comparing the frequency response of belts in CoreXY and CoreXZ kinematics 3D printers.
+# Description: Provides a command for comparing the frequency response of belts in CoreXY/Hybrid CoreXY and CoreXZ kinematics 3D printers.
 #              The script performs resonance tests along specified axes, starts and stops measurements, and generates graphs
 #              for each axis to analyze the collected data.
 
@@ -54,7 +54,7 @@ def compare_belts_responses(gcmd, klipper_config, st_process: ShakeTuneProcess) 
     max_accel = max_freq * accel_per_hz
 
     motors_config_parser = MotorsConfigParser(klipper_config, motors=None)
-    if motors_config_parser.kinematics in {'corexy', 'limited_corexy'}:
+    if motors_config_parser.kinematics in {'corexy', 'limited_corexy', 'hybrid_corexy'}:
         filtered_config = [a for a in AXIS_CONFIG if a['axis'] in ('a', 'b')]
         if accel_chip is None:
             accel_chip = Accelerometer.find_axis_accelerometer(printer, 'xy')
@@ -64,7 +64,9 @@ def compare_belts_responses(gcmd, klipper_config, st_process: ShakeTuneProcess) 
         if accel_chip is None:
             accel_chip = Accelerometer.find_axis_accelerometer(printer, 'x')
     else:
-        raise gcmd.error(f'CoreXY and CoreXZ kinematics required, {motors_config_parser.kinematics} found')
+        raise gcmd.error(
+            f'CoreXY/Hybrid CoreXY and CoreXZ kinematics required, {motors_config_parser.kinematics} found'
+        )
     ConsoleOutput.print(f'{motors_config_parser.kinematics.upper()} kinematics mode')
 
     if accel_chip is None:

@@ -95,7 +95,7 @@ class BeltsComputation:
         # Compute similarity factor and MHI if needed (for symmetric kinematics)
         similarity_factor = None
         mhi = None
-        if self.kinematics in {'limited_corexy', 'corexy', 'limited_corexz', 'corexz'}:
+        if self.kinematics in {'limited_corexy', 'corexy', 'hybrid_corexy', 'limited_corexz', 'corexz'}:
             correlation, _ = pearsonr(signal1.psd, signal2.psd)
             similarity_factor = correlation * 100
             similarity_factor = np.clip(similarity_factor, 0, 100)
