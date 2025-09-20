@@ -129,6 +129,8 @@ python -m shaketune.cli belts \
 - `--sweeping_period`: Sweeping period (seconds)
 - `--max_scale`: Maximum energy scale for graphs
 
+> **Hybrid CoreXY tip**: the diagonal traces always involve both belts. Use the plot to spot big mechanical differences, but expect the similarity score to read lower than on a perfectly symmetric CoreXY.
+
 ### 4. Input Shaper Calibration
 
 ```bash

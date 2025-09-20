@@ -1,6 +1,10 @@
 # Measuring belts relative differences
 
-The `COMPARE_BELTS_RESPONSES` macro is dedicated for CoreXY, Hybrid CoreXY (including limited variants) or CoreXZ machines where it can help you to diagnose belt path problems by measuring and plotting the differences between their behaviors. It will also help you tension your belts at the same tension.
+The `COMPARE_BELTS_RESPONSES` macro is dedicated for CoreXY, Hybrid CoreXY or CoreXZ machines where it can help you to diagnose belt path problems by measuring and plotting the differences between their behaviors. It will also help you tension your belts at the same tension.
+
+> **Hybrid CoreXY note**
+>
+> On hybrid rigs the two belt loops are not fully independent: toolhead X moves don't affect Y axis, but Y axis moves do also engage the X belt. The macro still runs and the diagonal traces can highlight gross mechanical issues (stiff bearings, slack, etc.), but do **not** expect the curves to overlap the way a symmetrical CoreXY does. Treat the similarity score and paired peak table as advisory only and rely on the straight-axis vibration profile (0°/90° traces) for fine tuning.
 
   > **Note**:
   >

@@ -82,3 +82,4 @@ flowchart TB
 ## Complementary ressources
 
   - [Sineos post](https://klipper.discourse.group/t/interpreting-the-input-shaper-graphs/9879) in the Klipper knowledge base
+> **Hybrid CoreXY users**: diagonal belt tests still run but they will always show some imbalance because both loops share the load. Use them to catch large mechanical issues, and lean on the vibrations profile for straight X/Y tuning.

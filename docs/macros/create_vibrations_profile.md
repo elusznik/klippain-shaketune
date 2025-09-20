@@ -41,9 +41,14 @@ And why do we care so much about finding these speeds? Because during a print, t
 
 | Example | description |
 |:-----|-------------|
-|![](../images/vibrations_graphs/polar_angle_energy_profile.png)|Shows how vibrational energy varies with the direction where the toolhead is running. It helps in identifying angles that produce less vibration, and potentially detect assymetries in the belt paths for a CoreXY/Hybrid CoreXY (including limited variants) printer|
+|![](../images/vibrations_graphs/polar_angle_energy_profile.png)|Shows how vibrational energy varies with the direction where the toolhead is running. It helps in identifying angles that produce less vibration, and potentially detect assymetries in the belt paths for a CoreXY/Hybrid CoreXY printer|
 
-This plot is like your go-to playlist for finding those angles where the vibe is just right. But here's the thing: when printing, your toolhead will groove in all directions and angles, depending on the geometry of your parts, so sticking to just one angle isn't possible. My tip to make the most of this chart for your prints: if you're working on something rectangular, try to align it so that most of the edges match the angles that's least likely to make your printer jitter. For those sleek CoreXY (including Hybrid CoreXY and their limited variants) printers, aiming for 45/135 degrees is usually a hit, while the trusty Cartesian printers groove best at 0/90 degrees. And for everything else? Well, there's not much more to do here except rely on the [Global Speed Energy Profile chart](#global-speed-energy-profile) to tune your slicer profile speeds instead.
+Use this plot to identify motion directions with lower vibrational energy. Prints include moves at many angles, so you cannot constrain motion to a single direction. Practical guidance:
+- For rectangular parts, orient edges to align with angles that show lower energy in the plot.
+- On CoreXY 45°/135° are favorable; on Hybrid CoreXY/Cartesian printers, 0°/90° are typically optimal.
+- On Hybrid CoreXY, diagonals excite both belts; use 0°/90° traces to judge straight X/Y behavior and diagonal traces to reveal larger asymmetries.
+
+For speed selection, rely primarily on the Global Speed Energy Profile.
 
 Now, onto the symmetry indicator. Think of this tool as the dance coach for your printer, especially designed for those with a symmetrical setup like CoreXY/Hybrid CoreXY (limited variants included) models. It's all about using some pretty neat math (cross-correlation, to be exact) to check out the vibes from both sides of the dance floor. Picture it as a top-notch party dancer, scanning the room at every angle, judging each dancer, and only giving top marks when everyone is perfectly in sync. This tool is ace at catching any sneakiness in your motor control or belt path, highlighting any "butterfly" shapes or even the slightest variations in the motors' resonance patterns. It's like having a magnifying glass that points out exactly where the party fouls are, helping you to fix them and keep your prints rolling out smooth and stunning.
 
